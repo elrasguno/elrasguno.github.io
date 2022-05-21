@@ -54,7 +54,7 @@ update() {
 		echo ' -------------------- FIXING LINKS  -------------------- '
 		echo ''
 		read -p "Github username: "  gh_username
-		echo "Leave blank if repo name is username.github.io"
+		echo "Leave blank if repo name is ${gh_username}.github.io"
 		read -p "Repo name: " gh_repo
 		# Fixing Links
 		find ${STATIC_DIR} -name '*.html' -type f -exec gsed -i 's#http://localhost:2368#'$gh_username'.github.io/'$gh_repo'#g' {} \;
